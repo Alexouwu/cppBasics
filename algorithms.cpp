@@ -37,23 +37,16 @@ void splitArray(const std::vector<int>& array, std::vector<int>& out1,
 
 void mergeSort(const std::vector<int>& array, std::vector<int>& out) {
     // std::cout<<"MergeSort for"<<std::endl;
-    printArray(array);
     if (array.size() < 2) {
         out = array;
-        std::cout << "SORTED!" << std::endl;
-        printArray(out);
         return;
     }
     if (array.size() == 2) {
         out = array;
         if (array[0] < array[1]) {
-            std::cout << "SORTED!" << std::endl;
-            printArray(out);
             return;
         }
         std::swap(out[0], out[1]);
-        std::cout << "SORTED!" << std::endl;
-        printArray(out);
         return;
     }
     std::vector<int> outS1, outS2, out1, out2;
@@ -76,8 +69,6 @@ void mergeSort(const std::vector<int>& array, std::vector<int>& out) {
             j++;
         }
     }
-    std::cout << "output" << std::endl;
-    printArray(out);
     return;
 }
 
