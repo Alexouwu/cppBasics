@@ -17,7 +17,7 @@ void printArray(const std::vector<int>& array) {
 }
 
 void mergeSort(const std::vector<int>& array, std::vector<int>& out) {
-    // std::cout<<"MergeSort for"<<std::endl;
+    // Base cases for 2 and 1 elements
     if (array.size() < 2) {
         out = array;
         return;
@@ -30,12 +30,16 @@ void mergeSort(const std::vector<int>& array, std::vector<int>& out) {
         std::swap(out[0], out[1]);
         return;
     }
+    // If not base case create out arrays and split array
     std::vector<int> out1, out2;
     std::vector<int> outS1(array.begin(), array.begin() + array.size() / 2);
     std::vector<int> outS2(array.begin() + array.size() / 2, array.end());
 
+    // Merge sort the sub arrays
     mergeSort(outS1, out1);
     mergeSort(outS2, out2);
+
+    // Merge the sorted arrays
     int i{}, j{};
     for (int k = 0; k < array.size(); k++) {
         if (i >= out1.size()) {
