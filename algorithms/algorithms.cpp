@@ -62,8 +62,11 @@ void mergeSort(const std::vector<int>& array, std::vector<int>& out) {
 int main() {
     std::vector<int> myVector = {11, 80, 3,  4, 5, 6,  1, 10,
                                  15, 2,  12, 8, 6, 20, 13};
+    std::cout << "This is the original list:" << std::endl;
+    printArray(myVector);
     std::vector<int> out;
     mergeSort(myVector, out);
+    std::cout << "This is the sorted list:" << std::endl;
     printArray(out);
     return 0;
 }
